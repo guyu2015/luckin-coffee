@@ -1,0 +1,23 @@
+{
+  "name": "vue",
+  "version": "1.0.0",
+  "description": "\"# luckin-coffee\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyu2015/luckin-coffee.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guyu2015/luckin-coffee/issues"
+  },
+  "homepage": "https://github.com/guyu2015/luckin-coffee#readme",
+  "dependencies": {
+    "formidable": "^1.2.1"
+  }
+}
