@@ -1,18 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Head/>
+
+    <Home/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Home from './components/home.vue'
+import Head from './components/head.vue'
 
 export default {
-  name: 'app',
+
+    data(){
+        return{
+            name: 'app',
+            video:document.body.clientWidth
+        }
+    },
+    mounted(){
+        const that = this;
+        window.onresize = () => {
+            return (() => {
+                window.screenWidth = document.body.clientWidth;
+                that.screenWidth = window.screenWidth
+            })()
+        }
+    },
+
   components: {
-    HelloWorld
-  }
+    Head : Head,
+      Home:Home
+  },
+
 }
 </script>
 
