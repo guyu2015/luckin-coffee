@@ -16,11 +16,18 @@
 
 
         </div>
+        <div class="second_parts">
+            <div class="second_top"><div ></div></div>
+            <div class="inner_content">
+                <div class="second_man"></div>
+                <div class="second_woman"></div>
+
+            </div>
+
+
+        </div>
     </div>
 </template>
-
-
-
 
 <script>
     export default {
@@ -47,7 +54,6 @@
 </script>
 
 <style scoped>
-
     .video_wrapper {
         position: fixed;
         z-index: 22;
@@ -79,7 +85,6 @@
         background-size: 100% 100%;
         background-image: url("../assets/images/play.png");
     }
-
     .cover_logo {
         position: absolute;
         z-index: 10;
@@ -91,10 +96,65 @@
         transform: scale(0.5);
         background-image: url("../assets/images/cover_logo@2x.png");
     }
-
     .play_wrapper {
         position: relative;
         width: 100%;
 
+    }
+    .second_parts{
+        width: 100%;
+        height: 840px;
+        margin-top: 60px;
+        position: relative;
+    }
+    .second_top{
+        position: relative;
+        width: 100%;
+        height: 80px;
+    }
+    .second_top>div{
+        width: 200px;
+        height: 80px;
+        position: absolute;
+        left: 60%;
+        background-repeat: no-repeat;
+        background-size: 120%;
+        background-position: -80% 0%;
+        background-image: url("../assets/images/sprite@2x (1).png");
+    }
+    .second_top::after{
+        position: absolute;
+        left: 54%;
+        content: '';
+        width: 36px;
+        bottom: -20px;
+        height: 2px;
+        background: #a38d71;
+        display: inline-block;
+    }
+    .inner_content{
+        width: 90%;
+        min-width: 1040px;
+        height: 840px;
+        position: absolute;
+        top: 0;
+        left: 5%;
+    }
+    .second_man{
+        position: absolute;
+        left: 10%;
+        top:0px;
+        width: 460px;
+        height: 280px;
+        background-image: url("../assets/images/part2_picture1.png");
+    }
+    .second_woman{
+        position: absolute;
+        top: 255px;
+        right: 0;
+        width: 730px;
+        height: 460px;
+        background-image: url("../assets/images/part2_picture2.png");
+        background-size:cover ;
     }
 </style>
