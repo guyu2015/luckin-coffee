@@ -6,7 +6,10 @@
             </div>
             <div class="link_wrapper">
                 <ul class="list_wrapper">
+
                     <li :class="{'active':item.show===true}" v-for="(item ,index) in linkList"  :key="item.title" :title="item.title" @click="clickLink(item)" ><router-link :to="item.path">{{item.title}}</router-link></li>
+                    <li class="hover_play" style="position:relative;"><img src="../assets/images/tel.gif"/><div class="commpany_text">进场合作热线 4000-100-100
+                        为大型企业、中高端写字楼提供专业咖啡配套。欢迎各类咖啡厅转让。</div></li>
                 </ul>
             </div>
 
@@ -50,6 +53,7 @@
         left: 0;
         width: 100%;
         height: 60px;
+        background: #fff;
         line-height: 60px;
         font-size: 13px;
     }
@@ -94,6 +98,18 @@
         border-bottom: 2px solid #172991;
 
     }
-
+.hover_play:hover div{
+    display: block;
+}
+    .commpany_text{
+        display: none;
+        width: 300px;
+        padding: 10px;
+        font-size: 14px;
+        line-height: 30px;
+        box-shadow: 0px 0px 7px 0px blue;
+        position: absolute;
+        right: 0;
+    }
 
 </style>

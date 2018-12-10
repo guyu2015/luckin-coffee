@@ -1,5 +1,5 @@
 <template>
-    
+    <div>newActive</div>
 </template>
 
 <script>

@@ -1,5 +1,5 @@
 <template>
-    
+    <div>Commpany US</div>
 </template>
 
 <script>
