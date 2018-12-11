@@ -9,7 +9,7 @@ import NewActive from '../components/newActive.vue'
 import CompanyUser from '../components/companyUser.vue'
 
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 export default new VueRouter({
     // 配置应用中所有的路由

@@ -107,6 +107,7 @@
         padding: 10px;
         font-size: 14px;
         line-height: 30px;
+        background: white;
         box-shadow: 0px 0px 7px 0px blue;
         position: absolute;
         right: 0;

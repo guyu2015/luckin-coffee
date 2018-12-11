@@ -17,12 +17,97 @@
 
         </div>
         <div class="second_parts">
-            <div class="second_top"><div ></div></div>
-            <div class="inner_content">
+            <div class="inner_content" :style="{'left':contentLeft}">
+                <div class="second_top"><div ></div></div>
                 <div class="second_man"></div>
                 <div class="second_woman"></div>
+            </div>
+        </div>
+        <div class="third_parts">
+            <div class="three_image"></div>
+            <div class="third_textWrap">
+                <div class="third_text">
+                    <div class="item-wrap slogan-wrap show-animate">
+                        <div class="product-slogan">
+                            <div class="hd common-bg top_pic"></div>
+                            <ul class="bd">
+                                <li class="slogan-item item-2 " >
+                                    <div class="common-bg one-bg"></div>
+                                    <div class="title">
+                                        <p class="chinese">优选上等阿拉比卡豆</p>
+                                        <p class="english">High Quality Arabica Beans</p>
+                                    </div>
+                                    <div class="desc" >
+                                        <p class="chinese">我们从四大咖啡产区，为您精心挑选阿拉比卡豆。</p>
+                                        <p class="english">Our coffee beans come directly from top coffee producing regions, and we make sure
+                                            each and every bean
+                                            is Arabica.</p>
+                                    </div>
+                                </li>
+                                <li class="slogan-item item-3">
+                                    <div class="common-bg two-bg"></div>
+                                    <div class="title">
+                                        <p class="chinese">WBC冠军团队精心拼配</p>
+                                        <p class="english">Blended by the WBC Champions</p>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="chinese">来自意大利、日本、中国的咖啡大师们，为您拼配。</p>
+                                        <p class="english">Every batch of our coffee is carefully blended by our team of the WBC champions,
+                                            hailing from Italy, Japan,
+                                            and China.</p>
+                                    </div>
+                                </li>
+                                <li class="slogan-item item-1">
+                                    <div class="common-bg three-bg"></div>
+                                    <div class="title">
+                                        <p class="chinese">新鲜烘焙 新鲜现磨</p>
+                                        <p class="english">Freshly roasted, freshly ground.</p>
+                                    </div>
+                                    <div class="desc">
+                                        <p class="chinese">您品尝的每一杯luckin，均为烘焙熟豆的最佳赏味期。</p>
+                                        <p class="english">Every cup of our coffee is made fresh just for you, guaranteed.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
             </div>
+
+
+
+        </div>
+        <div class="four_part">
+            <div class="four_part_inner">
+                <div class="about_us"></div>
+                <div class="about_intro">
+                    <p class="chinese about_chinese">
+                        luckin coffee（瑞幸咖啡），全球领先的咖啡新鲜式：优选上等阿拉比卡豆，由WBC（世界咖啡师大赛）冠军团队精心拼配，新鲜烘焙，新鲜现磨。luckin
+                        coffee倡导更灵活的购买体验，遍布各商圈写字楼，可自提可配送，已成为咖啡新零售代表连锁品牌。
+                    </p>
+                    <p class="english about_english">
+                        luckin coffee is the world's leading brand for serving fresh coffees. Our coffee is freshly roasted,
+                        and ground with high
+                        quality Arabica beans, which are carefully blended by our team of the WBC champions. We advocate a more
+                        flexible
+                        experience for our customers by providing pickup and delivery options, while also locating our coffee
+                        shops
+                        in main shopping centers and office districts. luckin coffee is becoming the new trend of coffee retail
+                        brand.
+                    </p>
+                </div>
+                <div class="about_image">
+                    <div class="img_wrapper"><img  src="../assets/images/part4_picture1.png"/></div>
+                    <div class="img_wrapper"><img  src="../assets/images/part4_picture2.png"/></div>
+                    <div class="img_wrapper"><img  src="../assets/images/part4_picture3.png"/></div>
+
+
+                </div>
+            </div>
+
+
+
 
 
         </div>
@@ -30,20 +115,30 @@
 </template>
 
 <script>
+    import "../assets/css/home.css"
     export default {
-        name: 'HelloWorld',
         props: {
             msg: String
         },
+
+
         data(){
           return{
-              playFlag:"none"
+              playFlag:"none",
+              contentLeft:"440px"
           }
+        },
+        mounted(){
+            let that = this;
+            window.onresize = function(){
+                that.contentLeft = (document.body.clientWidth-1040)/2+"px";
+            }
+
         },
         methods: {
             playBegin(){
-                this.playFlag = "block"
-                this.$refs.video.currentTime  = 0
+                this.playFlag = "block";
+                this.$refs.video.currentTime  = 0;
                 this.$refs.video.play()
             },
             closeHandle(){
@@ -54,107 +149,5 @@
 </script>
 
 <style scoped>
-    .video_wrapper {
-        position: fixed;
-        z-index: 22;
-        background: #000;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-    }
-    .close_video{
-        color: white;
-        padding: 10px 30px;
-        text-align: right;
-        font-size: 50px;
 
-
-    }
-    .video_hidden{
-
-    }
-    .cover_play {
-        position: absolute;
-        width: 64px;
-        height: 64px;
-        margin-left: -32px;
-        left: 50%;
-        top: 60%;
-        z-index: 10;
-        background-size: 100% 100%;
-        background-image: url("../assets/images/play.png");
-    }
-    .cover_logo {
-        position: absolute;
-        z-index: 10;
-        width: 30%;
-        left: 35%;
-        top: 8%;
-        height: 60%;
-        background-size: 100% 100%;
-        transform: scale(0.5);
-        background-image: url("../assets/images/cover_logo@2x.png");
-    }
-    .play_wrapper {
-        position: relative;
-        width: 100%;
-
-    }
-    .second_parts{
-        width: 100%;
-        height: 840px;
-        margin-top: 60px;
-        position: relative;
-    }
-    .second_top{
-        position: relative;
-        width: 100%;
-        height: 80px;
-    }
-    .second_top>div{
-        width: 200px;
-        height: 80px;
-        position: absolute;
-        left: 60%;
-        background-repeat: no-repeat;
-        background-size: 120%;
-        background-position: -80% 0%;
-        background-image: url("../assets/images/sprite@2x (1).png");
-    }
-    .second_top::after{
-        position: absolute;
-        left: 54%;
-        content: '';
-        width: 36px;
-        bottom: -20px;
-        height: 2px;
-        background: #a38d71;
-        display: inline-block;
-    }
-    .inner_content{
-        width: 90%;
-        min-width: 1040px;
-        height: 840px;
-        position: absolute;
-        top: 0;
-        left: 5%;
-    }
-    .second_man{
-        position: absolute;
-        left: 10%;
-        top:0px;
-        width: 460px;
-        height: 280px;
-        background-image: url("../assets/images/part2_picture1.png");
-    }
-    .second_woman{
-        position: absolute;
-        top: 255px;
-        right: 0;
-        width: 730px;
-        height: 460px;
-        background-image: url("../assets/images/part2_picture2.png");
-        background-size:cover ;
-    }
 </style>
