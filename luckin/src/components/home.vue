@@ -1,7 +1,7 @@
 <template>
     <div class="content_wrapper">
         <div class="play_wrapper">
-            <div class="cover_logo" ></div>
+            <div class="cover_logo"></div>
             <div class="cover_play" @click="playBegin"></div>
             <video autoplay="autoplay" width="100%" loop="loop" muted="muted">
                 <source src="../assets/source/autoplay.mp4"/>
@@ -18,7 +18,9 @@
         </div>
         <div class="second_parts">
             <div class="inner_content" :style="{'left':contentLeft}">
-                <div class="second_top"><div ></div></div>
+                <div class="second_top">
+                    <div></div>
+                </div>
                 <div class="second_man"></div>
                 <div class="second_woman"></div>
             </div>
@@ -31,15 +33,16 @@
                         <div class="product-slogan">
                             <div class="hd common-bg top_pic"></div>
                             <ul class="bd">
-                                <li class="slogan-item item-2 " >
+                                <li class="slogan-item item-2 ">
                                     <div class="common-bg one-bg"></div>
                                     <div class="title">
                                         <p class="chinese">优选上等阿拉比卡豆</p>
                                         <p class="english">High Quality Arabica Beans</p>
                                     </div>
-                                    <div class="desc" >
+                                    <div class="desc">
                                         <p class="chinese">我们从四大咖啡产区，为您精心挑选阿拉比卡豆。</p>
-                                        <p class="english">Our coffee beans come directly from top coffee producing regions, and we make sure
+                                        <p class="english">Our coffee beans come directly from top coffee producing
+                                            regions, and we make sure
                                             each and every bean
                                             is Arabica.</p>
                                     </div>
@@ -52,7 +55,8 @@
                                     </div>
                                     <div class="desc">
                                         <p class="chinese">来自意大利、日本、中国的咖啡大师们，为您拼配。</p>
-                                        <p class="english">Every batch of our coffee is carefully blended by our team of the WBC champions,
+                                        <p class="english">Every batch of our coffee is carefully blended by our team of
+                                            the WBC champions,
                                             hailing from Italy, Japan,
                                             and China.</p>
                                     </div>
@@ -65,7 +69,8 @@
                                     </div>
                                     <div class="desc">
                                         <p class="chinese">您品尝的每一杯luckin，均为烘焙熟豆的最佳赏味期。</p>
-                                        <p class="english">Every cup of our coffee is made fresh just for you, guaranteed.</p>
+                                        <p class="english">Every cup of our coffee is made fresh just for you,
+                                            guaranteed.</p>
                                     </div>
                                 </li>
                             </ul>
@@ -74,7 +79,6 @@
                 </div>
 
             </div>
-
 
 
         </div>
@@ -87,28 +91,56 @@
                         coffee倡导更灵活的购买体验，遍布各商圈写字楼，可自提可配送，已成为咖啡新零售代表连锁品牌。
                     </p>
                     <p class="english about_english">
-                        luckin coffee is the world's leading brand for serving fresh coffees. Our coffee is freshly roasted,
+                        luckin coffee is the world's leading brand for serving fresh coffees. Our coffee is freshly
+                        roasted,
                         and ground with high
-                        quality Arabica beans, which are carefully blended by our team of the WBC champions. We advocate a more
+                        quality Arabica beans, which are carefully blended by our team of the WBC champions. We advocate
+                        a more
                         flexible
-                        experience for our customers by providing pickup and delivery options, while also locating our coffee
+                        experience for our customers by providing pickup and delivery options, while also locating our
+                        coffee
                         shops
-                        in main shopping centers and office districts. luckin coffee is becoming the new trend of coffee retail
+                        in main shopping centers and office districts. luckin coffee is becoming the new trend of coffee
+                        retail
                         brand.
                     </p>
                 </div>
                 <div class="about_image">
-                    <div class="img_wrapper"><img  src="../assets/images/part4_picture1.png"/></div>
-                    <div class="img_wrapper"><img  src="../assets/images/part4_picture2.png"/></div>
-                    <div class="img_wrapper"><img  src="../assets/images/part4_picture3.png"/></div>
-
-
+                    <div class="img_wrapper"><img src="../assets/images/part4_picture1.png"/></div>
+                    <div class="img_wrapper"><img src="../assets/images/part4_picture2.png"/></div>
+                    <div class="img_wrapper"><img src="../assets/images/part4_picture3.png"/></div>
                 </div>
             </div>
 
 
+        </div>
+        <div class="five_part">
+            <div class="five_content">
+                <div class="common-bg five_bg"></div>
+                <div class="bd">
+                    <p class="chinese" style="font-size: 14px;color:#333;">
+                        为大型企业、中高端写字楼提供专业咖啡配套。欢迎各类咖啡厅转让。
+                    </p>
+                    <p class="english">
+                        For providing professional coffee services for large enterprises and mid-high end office
+                        buildings,
+                        please call us. Store
+                        ownership transfer is also welcomed.
+                    </p>
+                </div>
+                <div class="pic_five">
+                    <div><img src="../assets/images/part5_picture1.png"></div>
+                    <div><img src="../assets/images/part5_picture2.png"></div>
+                </div>
+            </div>
+            <div class="five_bottom"></div>
+
+        </div>
+        <div class="six_part">
+            <div class="six_pic">
 
 
+            </div>
 
         </div>
     </div>
@@ -116,32 +148,33 @@
 
 <script>
     import "../assets/css/home.css"
+
     export default {
         props: {
             msg: String
         },
 
 
-        data(){
-          return{
-              playFlag:"none",
-              contentLeft:"440px"
-          }
+        data() {
+            return {
+                playFlag: "none",
+                contentLeft: "440px"
+            }
         },
-        mounted(){
+        mounted() {
             let that = this;
-            window.onresize = function(){
-                that.contentLeft = (document.body.clientWidth-1040)/2+"px";
+            window.onresize = function () {
+                that.contentLeft = (document.body.clientWidth - 1040) / 2 + "px";
             }
 
         },
         methods: {
-            playBegin(){
+            playBegin() {
                 this.playFlag = "block";
-                this.$refs.video.currentTime  = 0;
+                this.$refs.video.currentTime = 0;
                 this.$refs.video.play()
             },
-            closeHandle(){
+            closeHandle() {
                 this.playFlag = "none"
             }
         }
