@@ -32,7 +32,7 @@
                     <div class="item-wrap slogan-wrap show-animate">
                         <div class="product-slogan">
                             <div class="hd common-bg top_pic"></div>
-                            <ul class="bd">
+                            <ul class="bd slogan-item-list">
                                 <li class="slogan-item item-2 ">
                                     <div class="common-bg one-bg"></div>
                                     <div class="title">
@@ -137,12 +137,34 @@
 
         </div>
         <div class="six_part">
-            <div class="six_pic">
+            <div class="six_pic"></div>
+            <div class="other_content">
+                <div class="common-bg other_box"></div>
+                <div class="six_bottom_box">
+                    <div class="six_bottom_box1">
+                        <div class="six_image1"></div>
+                        <div class="text-wrap">
+                            <div class="chinese_six">下载APP，新客户全场首件免费</div>
+                            <div class="english_six">Download APP to get any one free of your first deal</div>
+                        </div>
+                    </div>
+                    <div  class="six_bottom_box1">
+                        <div class="six_image1"></div>
+                        <div class="text-wrap">
+                            <div class="chinese_six">关注微信和幸运打个招呼</div>
+                            <div class="english_six">Follow our WeChat and good luck!</div>
+                        </div>
 
+
+                    </div>
+
+
+                </div>
 
             </div>
-
         </div>
+
+        <div class="gotoTop" @click="gotoTop"></div>
     </div>
 </template>
 
@@ -169,6 +191,7 @@
 
         },
         methods: {
+
             playBegin() {
                 this.playFlag = "block";
                 this.$refs.video.currentTime = 0;
@@ -176,6 +199,15 @@
             },
             closeHandle() {
                 this.playFlag = "none"
+            },
+            // 去顶部
+            gotoTop(){
+                scrollTo(0,0);
+                console.log(document.body.scrollTop)
+                // window.scrollBy(0,-100);//Only for y vertical-axis
+                // if(document.body.scrollTop>0) {
+                //     sdelay= setTimeout('returnTop()',50);
+                // }
             }
         }
     }

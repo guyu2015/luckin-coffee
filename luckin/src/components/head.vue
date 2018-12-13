@@ -7,9 +7,15 @@
             <div class="link_wrapper">
                 <ul class="list_wrapper">
 
-                    <li :class="{'active':item.show===true}" v-for="(item ,index) in linkList"  :key="item.title" :title="item.title" @click="clickLink(item)" ><router-link :to="item.path">{{item.title}}</router-link></li>
-                    <li class="hover_play" style="position:relative;"><img src="../assets/images/tel.gif"/><div class="commpany_text">进场合作热线 4000-100-100
-                        为大型企业、中高端写字楼提供专业咖啡配套。欢迎各类咖啡厅转让。</div></li>
+                    <li :class="item.show  ? 'active':'noActive'" v-for="(item ,index) in linkList" :key="item.title"
+                        :title="item.title" @click="clickLink(item)">
+                        <router-link :to="item.path"  >{{item.title}}</router-link>
+                    </li>
+                    <li class="hover_play" style="position:relative;"><img src="../assets/images/tel.gif"/>
+                        <div class="commpany_text">进场合作热线 4000-100-100
+                            为大型企业、中高端写字楼提供专业咖啡配套。欢迎各类咖啡厅转让。
+                        </div>
+                    </li>
                 </ul>
             </div>
 
@@ -25,17 +31,26 @@
         data() {
             return {
                 linkList: [
-                    {title: "首页",show:false,path:"/home"},
-                    {title: "关于我们",show:true,path:"/aboutus"},
-                    {title: "最新活动",show:false,path:"/newActive"},
-                    {title: "企业用户",show:false,path:"/companyUser"},
+                    {title: "首页", show: true, path: "/home"},
+                    {title: "关于我们", show: false, path: "/aboutus"},
+                    {title: "最新活动", show: false, path: "/newActive"},
+                    {title: "企业用户", show: false, path: "/companyUser"},
                 ]
             }
         },
-        methods:{
-            clickLink(item){
+        methods: {
+            clickLink(item) {
+                console.log(item);
+                let array = this.linkList;
+                for (let i = 0; i < array.length; i++) {
+                    if (array[i] == item) {
+                        array[i].show = true
+                    } else {
+                        array[i].show = false
+                    }
 
-                item.show = !item.show
+                }
+                this.linkList = array
 
             }
         },
@@ -63,6 +78,7 @@
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+        box-shadow: 0 2px 8px rgba(0,0,0,.4);
     }
 
     .logo {
@@ -86,22 +102,21 @@
         /*background: pink;*/
         flex: 5;
     }
-    .link_wrapper li{
+
+    .link_wrapper li {
         line-height: 40px;
         display: inline-block;
-        height: 50px;
+        height: 40px;
         float: left;
         margin-left: 30px;
     }
-    .active{
-        color:#172991;
-        border-bottom: 2px solid #172991;
 
+
+    .hover_play:hover div {
+        display: block;
     }
-.hover_play:hover div{
-    display: block;
-}
-    .commpany_text{
+
+    .commpany_text {
         display: none;
         width: 300px;
         padding: 10px;
@@ -111,6 +126,22 @@
         box-shadow: 0px 0px 7px 0px blue;
         position: absolute;
         right: 0;
+    }
+    li a{
+        text-decoration: none;
+    }
+    .noActive a {
+        text-decoration: none;
+        color: #444;
+    }
+    .active{
+        border-bottom: 2px solid #172991;
+    }
+    .active >a{
+        font-weight: 600;
+        color: #172991;
+        border-bottom-color: #172991;
+
     }
 
 </style>
