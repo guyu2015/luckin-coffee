@@ -1,3 +1,10 @@
+
+.home_wrapper{
+    width: 100%;
+    position: relative;
+}
+
+
 .slogan-item-list{
     margin-left: 40px;
     list-style: none;

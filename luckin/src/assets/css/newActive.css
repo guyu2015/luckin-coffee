@@ -1,0 +1,16 @@
+.newActive{
+    width: 100%;
+    min-width: 1040px;
+    overflow: hidden;
+    height: 832px;
+    position: relative;
+}
+.newActive_bgc{
+    position: absolute;
+    width: 1920px;
+    left: 50%;
+    margin-left: -960px;
+    height: 832px;
+    background-size: cover;
+    background-image: url("../images/active_0810.png");
+}

@@ -1,5 +1,5 @@
 <template>
-    <div class="content_wrapper">
+    <div class="home_wrapper">
         <div class="play_wrapper">
             <div class="cover_logo"></div>
             <div class="cover_play" @click="playBegin"></div>
@@ -163,20 +163,16 @@
 
             </div>
         </div>
-
         <div class="gotoTop" @click="gotoTop"></div>
     </div>
 </template>
 
 <script>
     import "../assets/css/home.css"
-
     export default {
         props: {
             msg: String
         },
-
-
         data() {
             return {
                 playFlag: "none",
